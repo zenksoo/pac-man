@@ -1,0 +1,20 @@
+[project]
+name = "pac-man"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+]
+requires-python = ">=3.10"
+dependencies = [
+    "flake8>=7.4.1",
+    "mypy>=2.4.1",
+    "pydantic>=2.14.4",
+]
+
+[project.scripts]
+pac-man = "pac_man:main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
