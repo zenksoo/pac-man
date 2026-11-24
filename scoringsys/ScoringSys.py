@@ -1,6 +1,6 @@
 from typing import Dict, Any
 import json
-from gameLog import Log
+from logs import Log
 
 class ScoreSys:
     """_summary_
