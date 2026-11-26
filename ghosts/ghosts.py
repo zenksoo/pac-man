@@ -1,6 +1,6 @@
 from typing import List, Tuple, Any
 from abc import ABC, abstractmethod
-
+from heapq import heappop, heappush
 
 class Area2D:
     # i thing this class make the ghost object easy to control when we tallking about the ghost area when player enter them it detect them and change the ghost movement
@@ -73,5 +73,21 @@ class ghost(ABC):
 
     @abstractmethod
     def _get_path_to_body(self, map: List[List[int]], player: Any) -> List[Tuple[int, int]]:
+        pass
+
+    @abstractmethod
+    def _get_next_cell_to_body(self, map: List[List[int]], player: Any) -> Tuple[int, int]:
+        # this function called each time and it get the next cell to the player direction
+        # it run dijkstra on the map and when all paths in the queue start from the same point
+        # mean this point is the only cell that the ghost start from it so we return them :)
+        queue: List[Tuple[int, List[Tuple[int, int]]]] = []
+
+        queue.append((0, [(self.grid_pos[0], self.grid_pos[1])]))
+
+        while (queue):
+            cost, curr_path = heappop(queue)
+
+            
+
         pass
 
